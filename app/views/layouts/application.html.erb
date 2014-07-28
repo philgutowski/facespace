@@ -8,7 +8,7 @@
 </head>
 <body>
 <% if signed_in? %>
-  You are signed_in as, <%= current_user.email %>
+  You are signed in as <%= current_user.username %>
   <%= link_to "sign-out", :session, method: :delete %>
 <% else %>
   <%= link_to "sign-up", [:new, :user] %>

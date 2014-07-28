@@ -1,3 +1,11 @@
 <h1 class="page-title">
   This is the dashboard page
 </h1>
+
+<%= form_for @message do |form| %>
+  <%= form.text_area :body, placeholder: "Type message here" %>
+  <%= form.text_field :url, placeholder: "Enter image URL" %>
+  <%= form.submit "Send Message" %>
+<% end %>
+
+<ul><%= render @messages %></ul>
