@@ -14,3 +14,4 @@ gem 'monban-generators'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
+gem 'dotenv-rails', group: :development
