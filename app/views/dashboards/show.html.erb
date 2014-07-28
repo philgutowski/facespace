@@ -10,3 +10,6 @@
 
 <ul><%= render @messages %></ul>
 
+<%= javascript_tag do %>
+  window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
+<% end %>
