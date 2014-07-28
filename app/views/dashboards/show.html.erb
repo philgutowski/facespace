@@ -8,7 +8,7 @@
   <%= form.submit "Send Message" %>
 <% end %>
 
-<ul><%= render @messages %></ul>
+<ul id="messages"><%= render @messages %></ul>
 
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
