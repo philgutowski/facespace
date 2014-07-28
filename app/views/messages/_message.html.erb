@@ -1,4 +1,5 @@
 <li>
   <%= message.body %>
-  <%= image_tag message.url %>
+  <p><%= image_tag message.image.url, class: "image-show" %></p>
+  <p>Created on: <%= message.created_at %></p>
 </li>

@@ -3,7 +3,7 @@ $(function(){
   var channel = pusher.subscribe('chat_channel');
 
   channel.bind('chat-event', function(data) {
-    $("#messages").append(data.message);
+    $(".messages").append(data.message);
   });
 
   channel.bind('online-users-event', function(data) {
@@ -15,7 +15,7 @@ $(function(){
       $(this).prop("action"),
       $(this).serialize()
     ).done(function(data){
-      $("#message_body").val("");
+      $("#message_body, #message_image").val("");
     });
     return false;
   });

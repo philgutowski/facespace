@@ -16,7 +16,27 @@
   <%= render "online_users", online_users: @online_users %>
 </div>
 
+<h1 class="page-title">
+  This is the dashboard page
+</h1>
 
+<%= form_for @message do |form| %>
+  <%= form.text_area :body, placeholder: "Type message here" %>
+  <%= form.hidden_field :image, value: ""  %>
+  <%= form.submit "Send Message", class: "message-button" %>
+
+<% end %>
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
+
+<div>
+  <img src="" width="160" height="120">
+</div>
+
+<video autoplay></video>
+<canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
+
+<ul class="messages">
+  <%= render @messages %>
+</ul>
