@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = sign_up(user_params)
+    @user = sign_up(user_params.merge(last_seen_at: Time.now))
 
     if @user.valid?
       sign_in(@user)
