@@ -11,11 +11,9 @@ $(function(){
     $.post(
       $(this).prop("action"),
       $(this).serialize()
-    ).done(function(renderedMessage){
+    ).done(function(data){
       $("#message_body").val("");
     });
-
     return false;
   });
-
 });

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
-      redirect_to "dashboards#show"
+      redirect_to :dashboard
     else
       render :new
     end
