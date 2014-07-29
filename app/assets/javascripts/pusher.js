@@ -3,7 +3,6 @@ $(function(){
   var channel = pusher.subscribe('chat_channel');
 
   channel.bind('chat-event', function(data) {
-    console.log('An event was triggered with message: ' + data.message);
     $("#messages").append(data.message);
   });
 
