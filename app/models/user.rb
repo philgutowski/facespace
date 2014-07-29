@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     update(last_seen_at: Time.now)
   end
 
-  def recently_online
+  def self.recently_online
     where("last_seen_at > ?", 5.minutes.ago)
   end
 end
