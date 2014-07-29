@@ -8,6 +8,7 @@
   <%= form.text_field :url, placeholder: "Enter image URL" %>
   <%= form.submit "Send Message" %>
 <% end %>
+</div>
 
 <h3> Online Users </h3>
 <ul> 
@@ -19,4 +20,3 @@
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
-</div>
