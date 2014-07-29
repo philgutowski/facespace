@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     message = current_user.messages.create(message_params)
     current_user.update(last_seen_at: Time.now)
     message_html = render_to_string(message)
-
+    announce_online_users
     Pusher["chat_channel"].trigger('chat-event', message: message_html)
 
     render json: { success: true }

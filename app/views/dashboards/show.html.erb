@@ -10,11 +10,12 @@
 <% end %>
 </div>
 
-<h3> Online Users </h3>
-<ul> 
-  <% @online_users.each do |user| %> 
-    <li><%= user.username %></li>
-  <% end %>
+<div id="online_users">
+  <%= render "online_users", online_users: @online_users %>
+</div>
+
+<ul id="messages">
+  <%= render @messages %>
 </ul>
 
 <%= javascript_tag do %>

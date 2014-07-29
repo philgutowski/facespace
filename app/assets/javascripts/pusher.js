@@ -6,6 +6,10 @@ $(function(){
     $("#messages").append(data.message);
   });
 
+  channel.bind('online-users-event', function(data) {
+    $("#online_users").html(data.message);
+  });
+
   $("#new_message").submit(function() {
     $.post(
       $(this).prop("action"),
