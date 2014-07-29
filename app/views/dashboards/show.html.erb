@@ -1,16 +1,13 @@
-<h1 class="page-title">
-  This is the dashboard page
-</h1>
+<div class="chatroom">
+<ul><%= render @messages %></ul>
+</div>
 
+<div class="chat-form">
 <%= form_for @message do |form| %>
   <%= form.text_area :body, placeholder: "Type message here" %>
   <%= form.text_field :url, placeholder: "Enter image URL" %>
   <%= form.submit "Send Message" %>
 <% end %>
-
-<ul id="messages">
-  <%= render @messages %>
-</ul>
 
 <h3> Online Users </h3>
 <ul> 
@@ -22,3 +19,4 @@
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
+</div>

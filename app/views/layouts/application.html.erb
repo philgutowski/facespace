@@ -7,15 +7,16 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
-<section class="outer-container"
-  <h1 class="logo">facespace</h1>
+<section class="outer-container">
+  <div class="logo">
+    <h1>facespace</h1>
+  </div>
   <div class="login">
     <% if signed_in? %>
       You are signed in as <%= current_user.username %>
       <%= link_to "sign-out", :session, method: :delete %>
     <% else %>
-      <%= link_to "sign-up", [:new, :user] %>
-      <%= link_to "sign-in", [:new, :session] %>
+      <p><%= link_to "sign-up", [:new, :user] %>   <%= link_to "sign-in", [:new, :session] %></p>
     <% end %>
   </div>
 </section>
