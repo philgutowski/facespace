@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
-      current_user.update(last_seen_at: Time.now)
+      current_user.mark_as_online
       redirect_to :dashboard
     else
       render :new
