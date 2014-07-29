@@ -10,6 +10,9 @@ class MessagesController < ApplicationController
     render json: { success: true }
   end
 
+  def online_users
+    @online_users = User.where(last_seen_at.1.hr.ago)
+
   private
 
   def message_params
