@@ -3,5 +3,6 @@
   <p id="body"><%= message.body %></p>
   <p id="time"><%= time_ago_in_words(message.created_at) %> ago</p>
   <%= button_to "Vote up", [message, :vote] %>
-  <%= button_to "Vote down", [message, :vote], method: :destroy %>
+  <%= button_to "Vote down", [message, :vote], method: :patch %>
+  Total Votes: <%= message.votes.sum("value") %>
 </li>

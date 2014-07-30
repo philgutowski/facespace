@@ -6,10 +6,11 @@ class VotesController < ApplicationController
     redirect_to :dashboard
   end
 
-  def destroy
+  def update
     get_vote
     @vote.value -= 1 unless @vote.value == -1
     @vote.save
+    redirect_to :dashboard
   end
 
   private
@@ -17,9 +18,5 @@ class VotesController < ApplicationController
   def get_vote
     message = Message.find(params[:message_id])
     @vote = message.votes.find_or_create_by(user_id: current_user.id)
-    unless @vote
-      @vote = Vote.create(user_id: current_user.id, message_id: message.id)
-      # message.votes << @vote
-    end
   end
 end
