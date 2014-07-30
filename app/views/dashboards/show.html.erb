@@ -8,7 +8,7 @@
   <div class="chat-form">
     <div>
       <video class="video" autoplay></video>
-      <canvas id="video-canvas" style="display:none;" width="160" height="120"></canvas>
+      <canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
     </div>
     <%= form_for @message do |form| %>
       <%= form.text_field :body, placeholder: "Type message here" %>

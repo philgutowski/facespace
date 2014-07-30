@@ -1,23 +1,33 @@
 .chatroom-container {
+  @include outer-container;
   margin-bottom: 120px;
   .messages {
     margin-top: 100px;
     .block {
       height: 120px;
+      max-width: 100%;
+      width: 100%;
       background-color: $light-gray;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
       .image-show {
         margin-left: 15px;
+        width: 160px;
+        height: 120px;
+        float: left;
       }
       #body {
-        font-size: $base-font-size * 1.75;
-        display: inline;
-        position: relative;
-        z-index: 0;
+        width: 650px;
+        height: 110px;
+        overflow: scroll;
+        margin-left: 20px;
+        float: left;
+        font-size: $base-font-size * 1.25;
+        padding: 10px;
+
       }
       #time {
-        text-align: right;
-        display: inline;
+        float: right;
+        padding: 10px;
       }
     }
   }
