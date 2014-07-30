@@ -4,6 +4,14 @@
     </ul>
 </section>
 
+<div class="chat-form">
+  <%= form_for @message do |form| %>
+    <%= form.text_area :body, placeholder: "Type message here" %>
+    <%= form.hidden_field :image, value: "" %>
+    <%= form.submit "Send Message", class: "message-button" %>
+  <% end %>
+</div>
+
 <section class="form-container">
   <div class="chat-form">
     <div>
