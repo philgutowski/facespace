@@ -13,11 +13,7 @@ $(function(){
       $(this).prop("action"),
       $(this).serialize()
     ).done(function(data){
-<<<<<<< HEAD
       $("#message_body, #message_image").val("");
-=======
-      $("#message_body").val("");
->>>>>>> Make header fixed
     });
     return false;
   });
