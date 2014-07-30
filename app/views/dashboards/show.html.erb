@@ -7,7 +7,7 @@
 <div class="chat-form">
   <%= form_for @message do |form| %>
     <%= form.text_area :body, placeholder: "Type message here" %>
-    <%= form.text_field :url, placeholder: "Enter image URL" %>
+    <%= form.text_field :image, placeholder: "Enter image URL" %>
     <%= form.submit "Send Message" %>
   <% end %>
 </div>
