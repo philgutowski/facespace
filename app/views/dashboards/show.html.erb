@@ -1,8 +1,8 @@
-<section class="chatroom-container">
-    <ul class="messages">
-      <%= render @messages %>
-    </ul>
-</section>
+<div class="chatroom">
+  <ul id="messages">
+    <%= render @messages %>
+  </ul>
+</div>
 
 <section class="form-container">
   <div class="chat-form">
@@ -28,3 +28,14 @@
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
+
+<div>
+  <img src="" width="160" height="120">
+</div>
+
+<video autoplay></video>
+<canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
+
+<ul class="messages">
+  <%= render @messages %>
+</ul>
