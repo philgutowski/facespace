@@ -9,10 +9,10 @@
 
 <section class="form-container">
   <div class="chat-form">
-    <div class="video">
-      <video autoplay></video>
+    <div>
+      <video class="video" autoplay></video>
       <canvas id="video-canvas" style="display:none;" width="160" height="120"></canvas>
-  </div>
+    </div>
     <%= form_for @message do |form| %>
       <%= form.text_field :body, placeholder: "Type message here" %>
       <%= form.hidden_field :image, value: "" %>

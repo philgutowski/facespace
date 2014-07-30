@@ -21,23 +21,37 @@ body {
   bottom: 0;
   .chat-form {
     @include outer-container;
+    .video {
+      @include span-columns(2);
+      margin: 0;
+    }
       textarea,
       #{$all-text-inputs},
       select[multiple=multiple] {
       background-color: $base-font-color;
       font-family: $form-font-family;
       font-size: $form-font-size;
-      padding: 0;
+      padding: 0 10px;
       height: 60px;
       color: $off-white;
       border: 0;
       border-radius: 0;
       box-shadow: none;
+      margin: 0;
 
       @include span-columns(8);
+      }
+      .message-button {
+        @include span-columns(2);
+        height: 60px;
+        border-radius: 0;
+        margin-left: -$gutter;
+        padding: 0 $gutter;
+      }
     }
   }
+  
   .online-users {
     display: none;
   }
-}
+
