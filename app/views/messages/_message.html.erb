@@ -1,5 +1,5 @@
-<li>
-  <%= message.body %>
-  <p><%= image_tag message.image.url, class: "image-show" %></p>
-  <p>Created on: <%= message.created_at %></p>
+<li class="block">
+  <%= image_tag message.image.url, class: "image-show" %>
+  <p id="body"><%= message.body %></p>
+  <p id="time"><%= time_ago_in_words(message.created_at) %> ago</p>
 </li>

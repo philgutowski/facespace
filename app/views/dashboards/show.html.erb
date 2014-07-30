@@ -1,10 +1,7 @@
 <section class="chatroom-container">
-  <div class="chatroom">
-    <ul id="messages">
+    <ul class="messages">
       <%= render @messages %>
     </ul>
-  </div>
-
 </section>
 
 <section class="form-container">
@@ -16,7 +13,7 @@
     <%= form_for @message do |form| %>
       <%= form.text_field :body, placeholder: "Type message here" %>
       <%= form.hidden_field :image, value: "" %>
-      <%= form.submit "Send Message", class: "message-button" %>
+      <%= form.submit "Send", class: "message-button" %>
     <% end %>
   </div>
 

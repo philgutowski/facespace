@@ -1,0 +1,15 @@
+.chatroom-container {
+  @include outer-container;
+  .messages {
+    margin-top: 100px;
+    .block {
+      @include span-columns(12);
+      @include omega(1n);
+      background-color: $light-gray;
+      margin-bottom: 5px;
+      #body {
+        font-size: $base-font-size * 1.75;
+      }
+    }
+  }
+}
