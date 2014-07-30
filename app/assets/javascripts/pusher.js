@@ -14,7 +14,6 @@ $(function(){
       $(this).serialize()
     ).done(function(data){
       $("#message_body, #message_image").val("");
-      $("#message_body").val("");
     });
     return false;
   });

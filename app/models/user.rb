@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def recent_messages
-    messages.sort{|a,b| b.created_at <=> a.created_at}.take(50)
+    messages.limit(50)
   end
 end
 
