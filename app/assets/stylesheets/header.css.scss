@@ -4,6 +4,9 @@
   width: 100%;
   height: 90px;
   top: 0;
+  border-bottom: $base-accent-color;
+  border-bottom-width: 6px;
+  border-bottom-style: solid;
 }
 
 .logo {

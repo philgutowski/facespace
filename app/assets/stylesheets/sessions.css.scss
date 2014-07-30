@@ -1,0 +1,6 @@
+.new_user, .new_session {
+  margin-top: 100px;
+  padding: 10px;
+  @include span-columns(10);
+  @include shift(1);
+}

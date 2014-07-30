@@ -1,19 +1,43 @@
-.outer-container {
-  @include outer-container;
+body {
+  width: 105%;
+  margin: 0;
 }
 
-.chatroom {
-  @include span-columns(12);
-  li {
-    background-color: $light-gray;
-    margin-bottom: 10px;
+.chatroom-container {
+  @include outer-container;
+  .chatroom {
+    @include span-columns(12);
+    margin-top: 60px;
+    li {
+      background-color: $light-gray;
+      margin-bottom: 10px;
+    }
   }
 }
 
-.chat-form {
-  margin-top: 40px;
-}
+.form-container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  .chat-form {
+    @include outer-container;
+      textarea,
+      #{$all-text-inputs},
+      select[multiple=multiple] {
+      background-color: $base-font-color;
+      font-family: $form-font-family;
+      font-size: $form-font-size;
+      padding: 0;
+      height: 60px;
+      color: $off-white;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
 
-.online-users {
-  @include span-columns(1);
+      @include span-columns(8);
+    }
+  }
+  .online-users {
+    display: none;
+  }
 }
