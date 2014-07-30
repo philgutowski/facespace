@@ -19,15 +19,17 @@ body {
   position: fixed;
   width: 100%;
   bottom: 0;
+
   .chat-form {
     @include outer-container;
     .video {
       @include span-columns(2);
       margin: 0;
     }
-      textarea,
-      #{$all-text-inputs},
-      select[multiple=multiple] {
+
+    textarea,
+    #{$all-text-inputs},
+    select[multiple=multiple] {
       background-color: $base-font-color;
       font-family: $form-font-family;
       font-size: $form-font-size;
@@ -40,18 +42,16 @@ body {
       margin: 0;
 
       @include span-columns(8);
-      }
-      .message-button {
-        @include span-columns(2);
-        height: 60px;
-        border-radius: 0;
-        margin-left: -$gutter;
-        padding: 0 $gutter;
-      }
+    }
+    .message-button {
+      @include span-columns(2);
+      height: 60px;
+      border-radius: 0;
     }
   }
-  
-  .online-users {
-    display: none;
-  }
+}
+
+.online-users {
+  display: none;
+}
 
