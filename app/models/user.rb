@@ -11,9 +11,5 @@ class User < ActiveRecord::Base
   def self.recently_online
     where("last_seen_at > ?", 5.minutes.ago)
   end
-
-  def recent_messages
-    messages.limit(50)
-  end
 end
 
