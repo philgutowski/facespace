@@ -7,8 +7,8 @@
 <div class="chat-form">
   <%= form_for @message do |form| %>
     <%= form.text_area :body, placeholder: "Type message here" %>
-    <%= form.text_field :image, placeholder: "Enter image URL" %>
-    <%= form.submit "Send Message" %>
+    <%= form.hidden_field :image, value: "" %>
+    <%= form.submit "Send Message", class: "message-button" %>
   <% end %>
 </div>
 
@@ -20,12 +20,6 @@
   This is the dashboard page
 </h1>
 
-<%= form_for @message do |form| %>
-  <%= form.text_area :body, placeholder: "Type message here" %>
-  <%= form.hidden_field :image, value: ""  %>
-  <%= form.submit "Send Message", class: "message-button" %>
-
-<% end %>
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
