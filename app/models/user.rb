@@ -12,4 +12,3 @@ class User < ActiveRecord::Base
     where("last_seen_at > ?", 5.minutes.ago)
   end
 end
-
