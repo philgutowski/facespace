@@ -1,14 +1,23 @@
 .chatroom-container {
-  @include outer-container;
+  margin-bottom: 120px;
   .messages {
     margin-top: 100px;
     .block {
-      @include span-columns(12);
-      @include omega(1n);
+      height: 120px;
       background-color: $light-gray;
       margin-bottom: 5px;
+      .image-show {
+        margin-left: 15px;
+      }
       #body {
         font-size: $base-font-size * 1.75;
+        display: inline;
+        position: relative;
+        z-index: 0;
+      }
+      #time {
+        text-align: right;
+        display: inline;
       }
     }
   }
