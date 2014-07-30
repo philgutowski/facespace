@@ -2,32 +2,18 @@
   @include outer-container;
 }
 
-.logo {
-  @include span-columns(7);
-  margin-top: -10px;
-  h1 {
-    font-family: $logo-font-family;
-    font-size: $logo-font-size;
-  }
-}
-
-.login {
-  @include span-columns(5);
-  margin-top: 55px;
-  text-align: right;
-}
-
 .chatroom {
-  @include outer-container;
-  height: 400px;
-  overflow: scroll;
+  @include span-columns(12);
   li {
     background-color: $light-gray;
-    margin: 10px;
+    margin-bottom: 10px;
   }
 }
 
 .chat-form {
-  @include outer-container;
   margin-top: 40px;
+}
+
+.online-users {
+  @include span-columns(1);
 }

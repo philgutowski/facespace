@@ -1,8 +1,9 @@
-<div class="chatroom">
-  <ul id="messages">
-    <%= render @messages %>
-  </ul>
-</div>
+<section class="outer-container">
+  <div class="chatroom">
+    <ul id="messages">
+      <%= render @messages %>
+    </ul>
+  </div>
 
 <div class="chat-form">
   <%= form_for @message do |form| %>
@@ -12,9 +13,21 @@
   <% end %>
 </div>
 
-<div id="online_users">
-  <%= render "online_users", online_users: @online_users %>
-</div>
+  <div class="online-users">
+    <p>Online Users</p>
+    <ul>
+      <%= render "online_users", online_users: @online_users %>
+    </ul>
+  </div>
+
+  <div class="chat-form">
+    <%= form_for @message do |form| %>
+      <%= form.text_area :body, placeholder: "Type message here" %>
+      <%= form.text_field :url, placeholder: "Enter image URL" %>
+      <%= form.submit "Send Message" %>
+    <% end %>
+  </div>
+</section>
 
 <h1 class="page-title">
   This is the dashboard page

@@ -6,7 +6,7 @@ $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
 // Sizes
-$logo-font-size: 8vw;
+$logo-font-size: 9vh;
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.5;
 $unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
@@ -21,6 +21,7 @@ $light-gray: #F3FFEE;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
+$off-white: #FFFFF8;
 
 // Background Color
 $base-background-color: #E2EDDD;
