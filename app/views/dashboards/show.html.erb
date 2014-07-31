@@ -1,8 +1,8 @@
-<div class="chatroom">
-  <ul class="messages">
-    <%= render @recent_messages %>
-  </ul>
-</div>
+<section class="chatroom-container">
+    <ul class="messages">
+      <%= render @messages %>
+    </ul>
+</section>
 
 <section class="form-container">
   <div class="chat-form">
@@ -11,7 +11,7 @@
       <canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
     </div>
     <%= form_for @message do |form| %>
-      <%= form.text_field :body, placeholder: "Type message here", maxlength: 50 %>
+      <%= form.text_field :body, placeholder: "Type message here" %>
       <%= form.hidden_field :image, value: "" %>
       <%= form.submit "Send", class: "message-button" %>
     <% end %>
@@ -28,17 +28,3 @@
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
-
-<div>
-  <img src="" width="160" height="120">
-</div>
-
-<video autoplay></video>
-<canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
-
-<div class="best-of">
-  <div class="rotate90">
-    Best of FaceSpace
-    <%= render @messages.top_five %>
-  </div>
-</div>
