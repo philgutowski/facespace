@@ -4,5 +4,5 @@
   <p id="time"><%= time_ago_in_words(message.created_at) %> ago</p>
   <%= link_to "Vote up", [message, :upvote], method: :post %>
   <%= link_to "Vote down", [message, :downvote], method: :post %>
-  Total Votes: <%= message.votes.sum("value") %>
+  Total Votes: <%= message.score %>
 </li>

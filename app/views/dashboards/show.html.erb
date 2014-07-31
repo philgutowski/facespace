@@ -1,5 +1,5 @@
 <div class="chatroom">
-  <ul id="messages">
+  <ul class="messages">
     <%= render @messages %>
   </ul>
 </div>
@@ -36,6 +36,9 @@
 <video autoplay></video>
 <canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
 
-<ul class="messages">
-  <%= render @messages %>
-</ul>
+<div class="best-of">
+  <div class="rotate90">
+    Best of FaceSpace
+    <%= render @messages.top_five %>
+  </div>
+</div>
