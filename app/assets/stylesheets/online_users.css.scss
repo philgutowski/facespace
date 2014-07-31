@@ -3,6 +3,12 @@
 }
 
 .online-users {
+  #online-users:hover {
+    right: 0;
+  }
+}
+
+#online-users {
   position: fixed;
   background-color: $base-font-color;
   color: $off-white;
@@ -21,5 +27,11 @@
   }
   ul {
     position: absolute;
+    left: 45px;
+    font-size: .75em;
+    height: 100px;
+    width: 160px;
+    overflow: scroll;
+    margin-top: 5px;
   }
 }

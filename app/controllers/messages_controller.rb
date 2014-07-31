@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     base64_data = data.sub("data:image/png;base64,", "")
     image_data = Base64.decode64(base64_data)
 
-    file = File.new("#{Rails.root}/tmp/uploads/image.png", 'wb')
+    file = File.new("tmp/#{rand(999999)}.png", 'wb')
     file.write image_data
 
     message = current_user.messages.create(message_params.merge(image: file))
