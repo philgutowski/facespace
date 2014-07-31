@@ -12,6 +12,10 @@ class Message < ActiveRecord::Base
     votes.sum("value")
   end
 
+  def self.recent
+    order(created_at: :asc).limit(50).sort_by(&:created_at)
+  end
+
   def self.top_five
     joins(:votes)
       .select("messages.*, SUM(votes.value) AS score")
