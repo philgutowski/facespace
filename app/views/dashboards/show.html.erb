@@ -7,18 +7,14 @@
 <div class="chat-form">
   <%= form_for @message do |form| %>
     <%= form.text_area :body, placeholder: "Type message here" %>
-  <%= form.hidden_field :image, value: "" %>
-  <%= form.submit "Send Message", class: "message-button" %>
-<% end %>
+    <%= form.hidden_field :image, value: "" %>
+    <%= form.submit "Send Message", class: "message-button" %>
+  <% end %>
 </div>
 
 <div id="online_users">
   <%= render "online_users", online_users: @online_users %>
 </div>
-
-<h1 class="page-title">
-  This is the dashboard page
-</h1>
 
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
@@ -32,11 +28,8 @@
 <canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
 
 <div class="best-of">
-  <p class="rotate90">
-  Best of FaceSpace
-  <p>
-  <% @messages.top_five.each do |message| %>
-    <%= render @messages %>
-    <% end %>
-  </p>
+  <div class="rotate90">
+    Best of FaceSpace
+    <%= render @messages.top_five %>
+  </div>
 </div>
