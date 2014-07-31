@@ -1,9 +1,11 @@
 $(function(){
+  $('html, body').scrollTop( $(document).height() );
   var pusher = new Pusher(window.PUSHER_KEY);
   var channel = pusher.subscribe('chat_channel');
 
   channel.bind('chat-event', function(data) {
-    $(".messages").prepend(data.message);
+    $(".messages").append(data.message);
+
   });
 
   channel.bind('online-users-event', function(data) {
@@ -14,9 +16,11 @@ $(function(){
     $.post(
       $(this).prop("action"),
       $(this).serialize()
-    ).done(function(data){
-      $("#message_body, #message_image").val("");
-    });
+      ).done(function(data){
+        $("#message_body, #message_image").val("");
+        $('html, body').scrollTop( $(document).height() );
+
+      });
     return false;
   });
 });
