@@ -3,12 +3,6 @@
 }
 
 .online-users {
-  #online-users:hover {
-    right: 0;
-  }
-}
-
-#online-users {
   position: fixed;
   background-color: $base-font-color;
   color: $off-white;
