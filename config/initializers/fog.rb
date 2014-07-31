@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',                        # required
-    :aws_access_key_id      => 'AKIAJYTN7BVSYVGCT4VA',                        # required
-    :aws_secret_access_key  => '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',                        # required
+    :aws_access_key_id      => ENV.fetch("AWS_ACCESS_KEY"),                        # required
+    :aws_secret_access_key  => ENV.fetch("AWS_SECRET_ACCESS_KEY"),                        # required
     :region                 => 'us-east-1',                  # optional, defaults to 'us-east-1'
   }
   config.fog_directory  = 'facespace-images'                     # required
