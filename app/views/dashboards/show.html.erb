@@ -16,14 +16,14 @@
       <%= form.submit "Send", class: "message-button" %>
     <% end %>
   </div>
-
-  <div class="online-users">
-    <h4>Online Users</h4>
-    <ul>
-      <%= render "online_users", online_users: @online_users %>
-    </ul>
-  </div>
 </section>
+
+<div class="online-users">
+  <p class="rotate90">Online Users</p>
+  <ul>
+    <%= render "online_users", online_users: @online_users %>
+  </ul>
+</div>
 
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";

@@ -1,11 +1,11 @@
 $(function(){
   var pusher = new Pusher(window.PUSHER_KEY);
   var channel = pusher.subscribe('chat_channel');
-  $(".chatroom").scrollTop(99000);
+  $("html, body").scrollTop(9999);
 
   channel.bind('chat-event', function(data) {
-    $("#messages").append(data.message);
-    $(".chatroom").scrollTop(99000);
+    $(".messages").append(data.message);
+    $("html, body").scrollTop(99000);
   });
 
   $("#new_message").submit(function() {

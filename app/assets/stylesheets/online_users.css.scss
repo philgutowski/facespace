@@ -1,0 +1,25 @@
+.online-users:hover {
+  right: 0;
+}
+
+.online-users {
+  position: fixed;
+  background-color: $base-font-color;
+  color: $off-white;
+  height: 109px;
+  width: 200px;
+  top: 200px;
+  right: -170px;
+  .rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    writing-mode: tb-rl;
+    position: absolute;
+    left: -33px;
+    bottom: 30px;
+  }
+  ul {
+    position: absolute;
+  }
+}
