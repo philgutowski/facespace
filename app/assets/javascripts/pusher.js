@@ -1,14 +1,10 @@
-function scroll_to_bottom() {
-  $('html, body').scrollTop( $(document).height() );
-}
-
 $(function(){
   var pusher = new Pusher(window.PUSHER_KEY);
   var channel = pusher.subscribe('chat_channel');
 
   scroll_to_bottom();
   channel.bind('chat-event', function(data) {
-    $(".messages").append(data.message);
+    $(".messages").prepend(data.message);
   });
 
   channel.bind('online-users-event', function(data) {
