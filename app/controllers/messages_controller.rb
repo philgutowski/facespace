@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = current_user.messages.create(message_params)
     current_user.update(last_seen_at: Time.now)
 
     data = message_params[:image]

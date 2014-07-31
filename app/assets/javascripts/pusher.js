@@ -8,6 +8,10 @@ $(function(){
     $("html, body").scrollTop(99000);
   });
 
+  channel.bind('online-users-event', function(data) {
+    $(".online-users ul").html(data.message);
+  });
+
   $("#new_message").submit(function() {
     $.post(
       $(this).prop("action"),

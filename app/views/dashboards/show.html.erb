@@ -11,7 +11,7 @@
       <canvas id="video-canvas" style="display:none;" width="640" height="480"></canvas>
     </div>
     <%= form_for @message do |form| %>
-      <%= form.text_field :body, placeholder: "Type message here" %>
+      <%= form.text_field :body, placeholder: "Type message here",maxlength: 50 %>
       <%= form.hidden_field :image, value: "" %>
       <%= form.submit "Send", class: "message-button" %>
     <% end %>
