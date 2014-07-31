@@ -3,7 +3,7 @@ $(function(){
     console.log('Reeeejected!', e);
   };
   var message = $(".message-button");
-  var video = $("video");
+  var video = $("video.video");
   var canvas = document.getElementById("video-canvas");
   var context = canvas.getContext('2d');
 
@@ -14,7 +14,6 @@ $(function(){
 
   function snapshot() {
     context.drawImage(video[0], 0, 0);
-    $("img").eq(0).prop("src", canvas.toDataURL());
     $("#message_image").val(canvas.toDataURL());
   }
 

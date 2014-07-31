@@ -1,8 +1,15 @@
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
   storage :fog
+
+  process resize_to_fit: [160, 120]
 
   def store_dir
     nil
+  end
+
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
   end
 
   def move_to_cache

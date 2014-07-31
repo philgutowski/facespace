@@ -17,4 +17,4 @@ gem 'dotenv-rails', group: :development
 gem 'pusher'
 gem 'carrierwave'
 gem 'fog', "~> 1.3.1"
-
+gem 'mini_magick'
