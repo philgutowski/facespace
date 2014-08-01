@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
-      announce_online_users
       redirect_to :dashboard
     else
       flash[:notice] = "Please choose a unique username and a password"
