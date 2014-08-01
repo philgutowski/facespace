@@ -3,8 +3,10 @@
   <p id="body"><%= message.body %></p>
   <p id="time"><%= time_ago_in_words(message.created_at) %> ago</p>
   <div class="voting">
+    <% if signed_in? %>
     <p> <%= link_to "Great Face", [message, :upvote], method: :post %> or 
     <%= link_to "Good Face", [message, :downvote], method: :post %>?</p>
     <p>Great Face Count: <%= message.score %></p>
+  <% end %>
 </div>
 </li>
