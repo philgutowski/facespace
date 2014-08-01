@@ -1,0 +1,75 @@
+.online-users:hover, .best-of:hover {
+  right: 0;
+}
+
+.online-users {
+  position: fixed;
+  background-color: $base-font-color;
+  color: $off-white;
+  height: 109px;
+  width: 200px;
+  top: 200px;
+  right: -170px;
+  ul {
+    position: absolute;
+    left: 45px;
+    font-size: .75em;
+    height: 100px;
+    width: 160px;
+    overflow: scroll;
+    margin-top: 5px;
+  }
+}
+
+.best-of {
+  position: fixed;
+  height: 200px;
+  width: 725px;
+  top: 320px;
+  right: -695px;
+  padding: 10px;
+  background-color: $base-font-color;
+  color: $off-white;
+  .rotate90 {
+    left: -12px;
+    bottom: 81px;
+  }
+  .best-of-inner-wrapper {
+    @include outer-container;
+    margin-left: 40px;
+  }
+  .block {
+    @include span-columns(6);
+    text-align: center;
+    width: 120px;
+    .image-show {
+      @include span-columns(6 of 6);
+      border-radius: 10%;
+    }
+    #body {
+      margin-top: 5px;
+      height: 80px;
+      font-size: .8em;
+      // overflow: scroll;
+    }
+    #time{
+      display: none;
+    }
+    .voting {
+      display: none;
+    }
+  }
+  .ul {
+    list-style-type: none;
+  }
+}
+
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  writing-mode: tb-rl;
+  position: absolute;
+  left: -33px;
+  bottom: 30px;
+}
