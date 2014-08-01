@@ -2,7 +2,6 @@ $(function(){
   var pusher = new Pusher(window.PUSHER_KEY);
   var channel = pusher.subscribe('chat_channel');
 
-  scroll_to_bottom();
   channel.bind('chat-event', function(data) {
     $(".messages").prepend(data.message);
   });
@@ -16,9 +15,8 @@ $(function(){
       $(this).prop("action"),
       $(this).serialize()
     ).done(function(data){
-        $("#message_body, #message_image").val("");
-        scroll_to_bottom();
-      });
+      $("#message_body, #message_image").val("");
+    });
     return false;
   });
 });
