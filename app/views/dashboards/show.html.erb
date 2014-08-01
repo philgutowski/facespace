@@ -25,6 +25,15 @@
   </ul>
 </div>
 
+<div class="best-of">
+  <div class="best-of-inner-wrapper">
+    <p class="rotate90">Best of</p>
+    <ul>
+      <%= render @messages.top_five %>
+    </ul>
+  </div>
+</div>
+
 <%= javascript_tag do %>
   window.PUSHER_KEY = "<%= ENV.fetch("PUSHER_KEY") %>";
 <% end %>
