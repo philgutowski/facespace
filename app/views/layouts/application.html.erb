@@ -7,22 +7,28 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
-<section class="header-container">
-  <div class="logo">
-    <h1>facespace</h1>
-    <div class="login">
-      <% if signed_in? %>
-        <p>You are signed in as <%= current_user.username %></p>
-        <%= link_to "sign-out", :session, method: :delete %>
-      <% else %>
-        <p><%= link_to "sign-up", [:new, :user] %></p>
-        <p><%= link_to "sign-in", [:new, :session] %></p>
-      <% end %>
+  <section class="header-container">
+    <div class="logo">
+      <h1>facespace</h1>
+      <div class="login">
+        <% if signed_in? %>
+          <p>You are signed in as <%= current_user.username %></p>
+          <%= link_to "sign-out", :session, method: :delete %>
+        <% else %>
+          <p><%= link_to "sign-up", [:new, :user] %></p>
+          <p><%= link_to "sign-in", [:new, :session] %></p>
+        <% end %>
     </div>
-  </div>
-</section>
+    <div>
+      <% if flash.any? %>
+        <div class="error">
+          <span><%= flash[:notice] %></span>
+        </div>
+    </div>
+    <% end %>
+  </section>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 <script src="//js.pusher.com/2.2/pusher.min.js"></script>

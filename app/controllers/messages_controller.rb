@@ -8,21 +8,22 @@ class MessagesController < ApplicationController
   def create
     current_user.update(last_seen_at: Time.now)
 
-    data = message_params[:image]
+    image = ImageFile.new(message_params[:image]).decode
 
-    base64_data = data.sub("data:image/png;base64,", "")
-    image_data = Base64.decode64(base64_data)
+    message = current_user.messages.new(message_params.merge(image: image))
+    online_users_html = render_to_string(partial: "online_users", locals: { online_users: User.recently_online })
+    PusherClient.announce_online_users(online_users_html)
 
-    file = File.new("tmp/#{rand(999999)}.png", 'wb')
-    file.write image_data
+    if message.save
+      message_html = render_to_string(message)
+      PusherClient.send_message(message_html)
 
-    message = current_user.messages.create(message_params.merge(image: file))
+      render json: { success: true }
+    else
+      error_html = render_to_string(partial: "error_messages", locals: { target: message })
 
-    message_html = render_to_string(message)
-    announce_online_users
-    Pusher["chat_channel"].trigger('chat-event', message: message_html)
-
-    render json: { success: true }
+      render json: { error: error_html }, status: 422
+    end
   end
 
   private

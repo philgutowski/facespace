@@ -10,13 +10,17 @@ $(function(){
     $(".online-users ul").html(data.message);
   });
 
-  $("#new_message").submit(function() {
+  $("#new_message").submit(function(){
     $.post(
       $(this).prop("action"),
       $(this).serialize()
     ).done(function(data){
       $("#message_body, #message_image").val("");
+    }).fail(function(data){
+      var errorHTML = data.responseJSON.error;
+      $("#error_messages").html(errorHTML);
     });
+
     return false;
   });
 });

@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       current_user.mark_as_online
       redirect_to :dashboard
     else
+      flash[:notice] = "Please sign in before using facespace" 
       render :new
     end
   end

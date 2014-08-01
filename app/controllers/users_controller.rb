@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       announce_online_users
       redirect_to :dashboard
     else
+      flash[:notice] = "Please choose a unique username and a password"
       render :new
     end
   end
