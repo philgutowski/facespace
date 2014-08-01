@@ -18,3 +18,4 @@ gem 'pusher'
 gem 'carrierwave'
 gem 'fog', "~> 1.3.1"
 gem 'mini_magick'
+gem 'rails_12factor', group: :production
