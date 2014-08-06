@@ -1,3 +1,5 @@
+$medium-screen: new-breakpoint(max-width em(500) 12);
+
 .header-container {
   z-index: 1;
   background-color: $off-white;
@@ -16,6 +18,10 @@
   h1 {
     font-family: $logo-font-family;
     font-size: $logo-font-size;
+    @include media($medium-screen) {
+      font-size: $logo-font-size / 2;
+      margin-top: 30px;
+    }
   }
 }
 

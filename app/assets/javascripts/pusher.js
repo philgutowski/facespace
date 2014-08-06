@@ -3,11 +3,12 @@ $(function(){
   var channel = pusher.subscribe('chat_channel');
 
   channel.bind('chat-event', function(data) {
-    $(".messages").prepend(data.message);
+    $(".messages").append(data.message);
   });
 
   channel.bind('online-users-event', function(data) {
     $(".online-users ul").html(data.message);
+    $("html, body").scrollTop(90000);
   });
 
   $("#new_message").submit(function(){

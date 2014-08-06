@@ -10,6 +10,10 @@ body {
     @include outer-container;
     background-color: $base-font-color;
     .video {
+      @include media($medium-screen) {
+        left: -5px;
+        height: 75px;
+      }
       margin: 0;
       position: fixed;
       bottom: 0;
@@ -30,10 +34,19 @@ body {
       box-shadow: none;
       margin: 0;
 
+      @include media($medium-screen) {
+        font-size: $form-font-size /2;
+        padding: 0;
+        margin-left: 155px;
+      }
+
       @include span-columns(7);
       @include shift(3)
     }
     .message-button {
+      @include media($medium-screen) {
+        display: none;
+      }
       @include span-columns(2);
       height: 60px;
       border-radius: 0;
